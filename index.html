@@ -1,82 +1,200 @@
-<!-- ================= БЛОК С ФОТО: КТО ОТВЕЧАЕТ ЗА РЕЗУЛЬТАТ ================= -->
-<section id="author" class="py-24 border-b border-cardBorder relative overflow-hidden">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="bg-card border border-cardBorder rounded-3xl p-8 md:p-14 relative overflow-hidden">
-      
-      <!-- Фоновое неоновое свечение внутри карточки -->
-      <div class="absolute -top-24 -right-24 w-96 h-96 bg-lime-400/10 rounded-full blur-3xl pointer-events-none"></div>
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- GOOGLE SEARCH CONSOLE ВЕРИФИКАЦИЯ -->
+  <meta name="google-site-verification" content="nXJTtr_l-n4wtcFuZr-pFl84_osowHmb1v1s5Tvtr9k" />
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-        
-        <!-- КОЛОНКА С ФОТОГРАФИЕЙ ЕГОРА -->
-        <div class="lg:col-span-5 relative">
-          <div class="relative aspect-[4/5] rounded-2xl overflow-hidden border-2 border-lime-400 photo-glow group">
-            <!-- ВАША ФОТОГРАФИЯ (файл должен называться egor.jpg и лежать в репозитории) -->
-            <img 
-              src="egor.jpg" 
-              alt="Егор — Продюсер и маркетолог" 
-              class="w-full h-full object-cover contrast-110 group-hover:scale-105 transition duration-500"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 pointer-events-none"></div>
+  <!-- SEO МЕТАТЕГИ -->
+  <title>IN.LAB | Автономный медиа-актив бизнеса и Стратегия 2026</title>
+  <meta name="description" content="Креативная лаборатория и маркетинг прямого действия: создаем автономный медиа-актив для бизнеса, уходим от зависимости Яндекс.Директа и агрегаторов. Съемка Reels и SMM под ключ в Сочи. Офис: ул. Яна Фабрициуса, 57Б." />
+  <meta name="keywords" content="съемка reels сочи, рилс сочи, смм сочи, видеопродакшн сочи, маркетинг без агрегаторов, яна фабрициуса 57б" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://videosochi.agency/" />
+  <meta name="theme-color" content="#08090C" />
 
-            <!-- Бейдж статуса на фотографии -->
-            <div class="absolute bottom-4 left-4 right-4 bg-dark/90 backdrop-blur-md border border-cardBorder rounded-xl p-3 flex items-center justify-between z-10">
-              <div>
-                <div class="font-display font-bold text-sm text-white flex items-center gap-1.5">
-                  Егор <i data-lucide="badge-check" class="w-4 h-4 text-lime-400"></i>
-                </div>
-                <div class="text-[11px] text-slate-400">Лично в каждом проекте</div>
-              </div>
-              <span class="px-2.5 py-1 rounded-md bg-lime-400 text-black text-[10px] font-display font-black uppercase">
-                PRODUCER
-              </span>
-            </div>
-          </div>
+  <!-- ГЕО-ТЕГИ (СОЧИ) -->
+  <meta name="geo.region" content="RU-KDA" />
+  <meta name="geo.placename" content="Сочи, ул. Яна Фабрициуса, 57Б" />
+  <meta name="geo.position" content="43.585525;39.723062" />
+  <meta name="ICBM" content="43.585525, 39.723062" />
 
-          <!-- Декоративные метки по углам -->
-          <div class="absolute -top-2 -left-2 w-4 h-4 border-t-2 border-l-2 border-lime-400"></div>
-          <div class="absolute -bottom-2 -right-2 w-4 h-4 border-b-2 border-r-2 border-lime-400"></div>
-        </div>
+  <!-- СТИЛИ И ШРИФТЫ -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Unbounded:wght@600;800;900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
 
-        <!-- КОЛОНКА С ТЕКСТОМ: ПОЗИЦИОНИРОВАНИЕ И ОТВЕТСТВЕННОСТЬ -->
-        <div class="lg:col-span-7 space-y-6">
-          
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-lime-400/10 text-lime-400 text-xs font-semibold uppercase tracking-wider">
-            <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> SKIN IN THE GAME • ЛИЧНАЯ ОТВЕТСТВЕННОСТЬ
-          </div>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Unbounded', 'sans-serif'],
+          },
+          colors: {
+            dark: '#08090C',
+            card: '#10121A',
+            cardBorder: '#1E2230',
+            lime: {
+              400: '#CCFF00',
+              500: '#B8E600',
+            }
+          }
+        }
+      }
+    }
+  </script>
 
-          <h2 class="font-display text-2xl sm:text-4xl font-extrabold uppercase leading-tight">
-            «Я не считаю лайки. <br />
-            Я строю независимые активы и <span class="text-lime-400 text-glow">отвечаю за результат</span>»
-          </h2>
+  <style>
+    .glow-lime {
+      box-shadow: 0 0 35px -5px rgba(204, 255, 0, 0.35);
+    }
+    .text-glow {
+      text-shadow: 0 0 20px rgba(204, 255, 0, 0.4);
+    }
+    .photo-glow {
+      box-shadow: 0 0 45px -10px rgba(204, 255, 0, 0.25);
+    }
+  </style>
+</head>
 
-          <div class="space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed">
-            <p>
-              Рынок завален фрилансерами и агентствами, которые продают бессмысленные танцы под тренды, а при отсутствии продаж разводят руками и винят алгоритмы.
-            </p>
-            <p class="font-medium text-white border-l-2 border-lime-400 pl-4 py-1 bg-lime-400/5 rounded-r-lg">
-              Я захожу в проект как <b>партнер по маркетингу</b>. Достаю истинные смыслы из бизнеса, сшиваю их с видеоконтентом и делаю так, чтобы люди шли к вам напрямую, даже если завтра выключат все рекламные кабинеты.
-            </p>
-            <p>
-              Никаких стажеров. Прямой диалог со мной, прозрачные цифры и личный контроль каждого этапа производства.
-            </p>
-          </div>
+<body class="bg-dark text-slate-100 font-sans antialiased selection:bg-lime-400 selection:text-black">
 
-          <!-- Преимущества внизу -->
-          <div class="pt-6 border-t border-cardBorder grid grid-cols-2 gap-4 text-xs">
-            <div>
-              <div class="font-display font-bold text-lime-400 text-base mb-0.5">Без посредников</div>
-              <div class="text-slate-400">Прямой контакт и быстрое внедрение решений.</div>
-            </div>
-            <div>
-              <div class="font-display font-bold text-lime-400 text-base mb-0.5">Твердые цифры</div>
-              <div class="text-slate-400">Окупаемость связок и капитализация базы клиентов.</div>
-            </div>
-          </div>
+  <!-- ================= ХЕДЕР ================= -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-dark/90 backdrop-blur-md border-b border-cardBorder">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="#" class="font-display font-black text-lg sm:text-xl tracking-wider flex items-center gap-2">
+        <span class="w-3 h-3 rounded-full bg-lime-400 animate-pulse"></span>
+        IN.LAB<span class="text-lime-400">.CREATIVE</span>
+      </a>
 
-        </div>
+      <!-- Меню Desktop -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-400">
+        <a href="#strategy" class="hover:text-lime-400 transition">Голубой океан</a>
+        <a href="#author" class="hover:text-lime-400 transition">Кто отвечает</a>
+        <a href="#cases" class="hover:text-lime-400 transition">Кейсы</a>
+        <a href="#pricing" class="hover:text-lime-400 transition">Тарифы</a>
+        <a href="#faq" class="hover:text-lime-400 transition">FAQ</a>
+      </nav>
 
+      <!-- CTA + Бургер -->
+      <div class="flex items-center gap-3">
+        <a href="#contact" class="hidden sm:inline-flex px-5 py-2.5 rounded-full bg-lime-400 text-black font-semibold text-xs uppercase tracking-wider hover:bg-lime-500 transition">
+          Обсудить проект
+        </a>
+        <button onclick="toggleMobileMenu()" class="md:hidden p-2.5 rounded-xl bg-card border border-cardBorder text-slate-200 hover:text-lime-400" aria-label="Открыть меню">
+          <i id="burgerIcon" data-lucide="menu" class="w-6 h-6"></i>
+        </button>
       </div>
     </div>
-  </div>
-</section>
+
+    <!-- Мобильное меню -->
+    <div id="mobileMenu" class="hidden md:hidden bg-card/95 border-b border-cardBorder px-6 py-6 space-y-4 backdrop-blur-xl">
+      <a href="#strategy" onclick="toggleMobileMenu()" class="block text-base font-medium text-slate-300 hover:text-lime-400">Стратегия Голубого Океана</a>
+      <a href="#author" onclick="toggleMobileMenu()" class="block text-base font-medium text-slate-300 hover:text-lime-400">Кто отвечает за результат</a>
+      <a href="#cases" onclick="toggleMobileMenu()" class="block text-base font-medium text-slate-300 hover:text-lime-400">Кейсы по нишам</a>
+      <a href="#pricing" onclick="toggleMobileMenu()" class="block text-base font-medium text-slate-300 hover:text-lime-400">Тарифы</a>
+      <a href="#contact" onclick="toggleMobileMenu()" class="block text-base font-medium text-lime-400">Офис на Яна Фабрициуса, 57Б</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ================= 1. HERO СЕКЦИЯ (ОБЛЕГЧЕННАЯ) ================= -->
+    <section class="relative pt-32 pb-16 md:pt-44 md:pb-24 overflow-hidden border-b border-cardBorder">
+      <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-lime-400/10 rounded-full blur-[130px] pointer-events-none"></div>
+
+      <div class="max-w-4xl mx-auto px-6 relative z-10 text-center">
+        <!-- Компактный бейдж -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-card border border-cardBorder text-[11px] sm:text-xs text-lime-400 font-semibold mb-6">
+          <span class="w-2 h-2 rounded-full bg-lime-400 animate-pulse"></span>
+          ГОЛУБОЙ ОКЕАН 2026
+        </div>
+
+        <!-- Заголовок всего в 2 строки -->
+        <h1 class="font-display text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-[1.1] mb-6">
+          Хватит кормить агрегаторы. <br />
+          <span class="text-lime-400 text-glow">Создайте свой медиа-актив</span>
+        </h1>
+
+        <!-- Лаконичный подзаголовок -->
+        <p class="max-w-2xl mx-auto text-slate-400 text-sm sm:text-base md:text-lg leading-relaxed mb-8">
+          Превращаем бизнес в контент и привлекаем клиентов напрямую через истории — без переплат за клики в Директе и грабительских комиссий площадок.
+        </p>
+
+        <!-- Кнопки действия -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="#strategy" class="w-full sm:w-auto px-7 py-3.5 rounded-full bg-lime-400 text-black font-display font-bold text-xs sm:text-sm uppercase tracking-wide hover:bg-lime-500 transition glow-lime flex items-center justify-center gap-2">
+            Выйти из зависимости
+            <i data-lucide="arrow-down-right" class="w-4 h-4"></i>
+          </a>
+          <a href="#author" class="w-full sm:w-auto px-7 py-3.5 rounded-full bg-card hover:bg-white/5 border border-cardBorder text-slate-300 font-medium text-xs sm:text-sm transition flex items-center justify-center gap-2">
+            <i data-lucide="shield-check" class="w-4 h-4 text-lime-400"></i> Кто отвечает за результат
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 2. ЛОВУШКА АГРЕГАТОРОВ VS ГОЛУБОЙ ОКЕАН ================= -->
+    <section id="strategy" class="py-20 bg-card/30 border-b border-cardBorder">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="max-w-3xl mb-12">
+          <span class="text-lime-400 font-semibold text-xs tracking-wider uppercase">Суровая правда рынка</span>
+          <h2 class="font-display text-2xl sm:text-4xl font-bold uppercase mt-2">Бизнес на чужой земле вам не принадлежит</h2>
+          <p class="text-slate-400 text-sm mt-3">Агрегаторы сначала подсаживают на дешевый трафик, а когда бизнес попадает в зависимость — поднимают комиссии и диктуют свои правила.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Красный океан -->
+          <div class="bg-card border border-red-500/30 rounded-3xl p-8">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 text-red-400 text-xs font-semibold mb-6">
+              ❌ КРАСНЫЙ ОКЕАН (АГРЕГАТОРЫ)
+            </div>
+            <h3 class="font-display font-bold text-xl mb-4 text-white">Игла Яндекс, WB, Авито, Ozon</h3>
+            <ul class="space-y-4 text-xs sm:text-sm text-slate-300">
+              <li class="flex items-start gap-3">
+                <span class="text-red-400 font-bold">•</span>
+                <span><b>Перегретый аукцион:</b> Стоимость клика растет каждый месяц, маржа бизнеса тает на глазах.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-red-400 font-bold">•</span>
+                <span><b>Смерть в один клик:</b> Сбой серверов, блокировка аккаунта или смена алгоритма — и продажи встали в ноль.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-red-400 font-bold">•</span>
+                <span><b>Клиент не ваш:</b> Человек покупает у платформы. Завтра он уйдет к конкуренту за скидку в 100 рублей.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Голубой океан -->
+          <div class="bg-card border-2 border-lime-400 rounded-3xl p-8 glow-lime">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-lime-400/10 text-lime-400 text-xs font-semibold mb-6">
+              ✅ ГОЛУБОЙ ОКЕАН (НАША СТРАТЕГИЯ)
+            </div>
+            <h3 class="font-display font-bold text-xl mb-4 text-white">Автономный медиа-актив бренда</h3>
+            <ul class="space-y-4 text-xs sm:text-sm text-slate-300">
+              <li class="flex items-start gap-3">
+                <span class="text-lime-400 font-bold">•</span>
+                <span><b>Своя экосистема:</b> Мы привлекаем людей напрямую через искренний сторителлинг, где доверие бьет любые скидки.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-lime-400 font-bold">•</span>
+                <span><b>Неуязвимость:</b> У вас есть собственная аудитория. Вам плевать на падение чужих серверов и чужие комиссии.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-lime-400 font-bold">•</span>
+                <span><b>Клиенты как менеджеры продаж:</b> Покупатели искренне рекомендуют вас друзьям и защищают бренд в комментариях.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- СЮДА ВСТАВЛЯЕТСЯ БЛОК <section id="author"> (КТО Я / КТО ОТВЕЧАЕТ) -->
